@@ -22,7 +22,7 @@ const featuredArticles = (
   url: `/blog/${e.data.slug}`,
 }));
 
-const baseUrl = Astro.url.origin;
+const baseUrl = import.meta.env.HOSTNAME || Astro.url.origin;
 ---
 
 <Layout>

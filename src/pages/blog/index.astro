@@ -10,7 +10,7 @@ const articles = (await getCollection("blog")).sort(
 );
 
 const { data: config } = await getConfigurationCollection();
-const baseUrl : string = Astro.url.origin;
+const baseUrl : string = import.meta.env.HOSTNAME || Astro.url.origin;
 ---
 
 <Layout>

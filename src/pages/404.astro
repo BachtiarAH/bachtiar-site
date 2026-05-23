@@ -4,7 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import { getConfigurationCollection } from "../lib/utils";
 
 const { data: config } = await getConfigurationCollection();
-const baseUrl = Astro.url.origin;
+const baseUrl = import.meta.env.HOSTNAME || Astro.url.origin;
 ---
 
 <Layout>
