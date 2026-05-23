@@ -12,16 +12,6 @@ const configuration = defineCollection({
     parser: (text) => JSON.parse(JSON.stringify(parseToml(text))),
   }),
   schema: z.object({
-    /**
-     * Core site configuration.
-     */
-    site: z.object({
-      /**
-       * This should be the base URL of your live site,
-       * and is used to generate absolute URLs for links and metadata.
-       */
-      baseUrl: z.url(),
-    }),
 
     /**
      * The global metadata for the site. If specific page metadata is not provided,

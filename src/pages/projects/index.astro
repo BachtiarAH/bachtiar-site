@@ -3,14 +3,14 @@ import { getCollection } from "astro:content";
 import Section from "../../components/common/Section.astro";
 import ProjectSnippet from "../../components/ProjectSnippet.astro";
 import Layout from "../../layouts/Layout.astro";
-import { getConfigurationCollection, getBaseUrl } from "../../lib/utils";
+import { getConfigurationCollection  } from "../../lib/utils";
 
 const projects = (await getCollection("project")).sort(
 	(a, b) => b.data.timestamp.valueOf() - a.data.timestamp.valueOf(),
 );
 
 const { data: config } = await getConfigurationCollection();
-const baseUrl = await getBaseUrl();
+const baseUrl = Astro.url.origin;
 ---
 
 <Layout>

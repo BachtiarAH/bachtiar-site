@@ -10,6 +10,7 @@ type Props = { frontmatter: ProjectFrontmatter };
 
 const { frontmatter } = Astro.props;
 const { data: config } = await getConfigurationCollection();
+const baseUrl = Astro.url.origin;
 ---
 
 <Layout>
@@ -31,12 +32,12 @@ const { data: config } = await getConfigurationCollection();
     }
     {
       frontmatter.cardImage && (
-        <meta property="og:image" content={frontmatter.cardImage} />
+        <meta property="og:image" content={baseUrl +frontmatter.cardImage} />
       )
     }
     <meta
       property="og:url"
-      content={`${config.site.baseUrl}/projects/${frontmatter.slug}`}
+      content={`${baseUrl}/projects/${frontmatter.slug}`}
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta
@@ -46,14 +47,14 @@ const { data: config } = await getConfigurationCollection();
     <meta name="twitter:description" content={frontmatter.description} />
     {
       frontmatter.cardImage && (
-        <meta name="twitter:image" content={frontmatter.cardImage} />
+        <meta name="twitter:image" content={baseUrl + frontmatter.cardImage} />
       )
     }
     <meta http-equiv="content-language" content="en" />
     <meta name="language" content="English" />
     <link
       rel="canonical"
-      href={`${config.site.baseUrl}/projects/${frontmatter.slug}`}
+      href={`${baseUrl}/projects/${frontmatter.slug}`}
     />
   </Fragment>
   <Section class="mt-8">

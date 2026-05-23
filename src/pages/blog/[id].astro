@@ -3,6 +3,8 @@ import { getCollection, render } from "astro:content";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 import { getConfigurationCollection } from "../../lib/utils";
 
+const baseUrl : string = Astro.url.origin;
+
 export async function getStaticPaths() {
 	const posts = await getCollection("blog");
 	const { data: config } = await getConfigurationCollection();
@@ -13,7 +15,7 @@ export async function getStaticPaths() {
 				...article,
 				data: {
 					...article.data,
-					url: `${config.site.baseUrl}/blog/${article.data.slug}`,
+					url: `${baseUrl}/blog/${article.data.slug}`,
 				},
 			},
 		},

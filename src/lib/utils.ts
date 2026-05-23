@@ -48,9 +48,3 @@ export const getConfigurationCollection = async (): Promise<
   configCache = configs[0];
   return configs[0];
 };
-
-export const getBaseUrl = async (): Promise<string> => {
-  const isProduction = import.meta.env.PROD;
-  const baseUrl = isProduction ? (await getConfigurationCollection()).data.site.baseUrl : "http://localhost:4321";
-  return baseUrl;
-}
