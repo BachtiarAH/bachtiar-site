@@ -1,0 +1,56 @@
+# Due to how Astro handles type inference with this structure,
+# we need to prefix all configuration keys with an underscore.
+
+[_.site]
+baseUrl = "https://bachtiarah.my.id"
+
+[_.globalMeta]
+title = "Bachtiar A.H"
+description = "Software Engineer"
+longDescription = "Bachtiar Arya Habibie, is a software engineer passionate about building scalable web applications and creating elegant solutions to complex problems."
+cardImage = "/profile.webp"
+keywords = ["web development", "Machine Learning", "technology"]
+
+[_.blogMeta]
+title = "My Blog"
+description = "Product of my practical experience and result of my research."
+longDescription = "Insights on web development, emerging tech trends, informatic technology research, and practical lessons from real-world programming."
+cardImage = "/profile.webp"
+keywords = ["web development", "design", "technology"]
+
+[_.projectMeta]
+title = "My Projects"
+description = "A list software and tool i have made alone or with my friends."
+longDescription = "A list of software and tools I have made alone or with my friends, frontend and full-stack applications, including iot projects."
+cardImage = "/profile.webp"
+keywords = ["web development", "design", "technology"]
+
+[_.notFoundMeta]
+title = "Page not found 404"
+description = "The page you are looking for does not exist."
+longDescription = "The page you are looking for does not exist."
+cardImage = "/profile.webp"
+
+[_.hero]
+title = "Bachtiar Arya Habibie"
+subtitle = "Software engineer "
+image = "/profile.webp"
+ctaText = "View Projects"
+ctaUrl = "/projects"
+
+[_.personal]
+name = "Bachtiar"
+githubProfile = "https://github.com/BachtiarAH"
+linkedinProfile = "https://www.linkedin.com/in/bachtiar-arya-habibie/"
+
+[_.texts]
+articlesName = "Articles"
+projectsName = "Projects"
+viewAll = "View All"
+noArticles = "No articles found."
+noProjects = "No projects found."
+
+[_.menu]
+home = "/"
+projects = "/projects"
+blog = "/blog"
